@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { CAROUSEL_GAP_PX, MOBILE_CAROUSEL_ITEM_WIDTH_PX } from "./constants";
 
 export const SliderWrapper = styled.div`
   display: flex;
@@ -14,11 +15,10 @@ export const CarouselTrack = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-
-  width: 100%;
+  width: fit-content;
   height: 100%;
 
-  gap: 2rem;
+  gap: ${CAROUSEL_GAP_PX}px;
 
   padding: 1rem 0;
 
@@ -26,8 +26,15 @@ export const CarouselTrack = styled(motion.div)`
 `;
 
 export const CarouselItem = styled.div`
-  width: 100%;
+  width: ${MOBILE_CAROUSEL_ITEM_WIDTH_PX}px;
+  max-width: ${MOBILE_CAROUSEL_ITEM_WIDTH_PX}px;
   height: 100%;
   display: flex;
   align-items: center;
+`;
+
+export const TestBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 `;
